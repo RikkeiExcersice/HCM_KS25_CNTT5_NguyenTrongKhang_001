@@ -103,11 +103,7 @@ def find_emp(list_employees):
         print("Không có id !")
         return
 
-def del_emp(list_employees):
-    del_id = input("Mời bạn nhập id cần xóa: ").upper().strip()
-    for i in range(len(list_employees)):
-        if list_employees["id"][i] == del_id:
-            list_employees.pop[i]
+
 
 def count_ranking(list_employees):
     count_excellent = 0
@@ -155,7 +151,7 @@ def main():
             case "3":
                 update_infor(list_employees)
             case "4":
-                del_emp(list_employees)
+                pass
             case "5":
                 find_emp(list_employees)
             case "6":
