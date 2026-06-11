@@ -43,7 +43,7 @@ def insert_employees(list_employees):
             new_salary = int(input("Mời bạn nhập lương cho nhân viên: "))
             new_daywork = int(input("Mời bạn nhập số ngày công: "))
             new_support_salary = int(input("Mời bạn nhập lương phụ cấp: "))
-            if new_name == '' or new_salary < 0 or new_daywork < 0 or new_support_salary < 0:
+            if new_name == '' or new_salary < 0 or new_daywork < 0 or new_support_salary < 0 or new_daywork > 31 or new_daywork < 0:
                 raise ValueError
             new_total_salary = cal_total_salary(new_salary, new_daywork, new_support_salary)
             new_rank = ranking_salary(new_total_salary)
@@ -77,7 +77,7 @@ def update_infor(list_employees):
                 em["support_salary"] = new_support_salary
                 new_total_salary = cal_total_salary(new_salary, new_daywork, new_support_salary)
                 new_rank = ranking_salary(new_total_salary)
-                if new_salary < 0 or new_daywork < 0 or new_support_salary < 0:
+                if new_salary < 0 or new_daywork < 0 or new_support_salary < 0 or new_daywork > 31 or new_daywork < 0:
                     raise ValueError
                 em["total_salary"] = new_total_salary
                 em["rank"] = new_rank
@@ -102,7 +102,13 @@ def find_emp(list_employees):
     else:
         print("Không có id !")
         return
-    
+
+def del_emp(list_employees):
+    del_id = input("Mời bạn nhập id cần xóa: ").upper().strip()
+    for i in range(len(list_employees)):
+        if list_employees["id"][i] == del_id:
+            list_employees.pop[i]
+
 def count_ranking(list_employees):
     count_excellent = 0
     count_good = 0
@@ -149,7 +155,7 @@ def main():
             case "3":
                 update_infor(list_employees)
             case "4":
-                pass
+                del_emp(list_employees)
             case "5":
                 find_emp(list_employees)
             case "6":
