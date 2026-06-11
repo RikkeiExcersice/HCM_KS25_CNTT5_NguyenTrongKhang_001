@@ -123,6 +123,7 @@ Số lượng nhân viên giỏi: {count_excellent}
 Số lượng nhân viên khá: {count_good}
 Số lượng nhân viên trung bình: {count_medium}
 Số lượng nhân viên thấp: {count_low}""")
+        
 def main():
     while True:
         print("Hệ thống quản lí nhân sự".center(30,'-'))
@@ -154,7 +155,7 @@ def main():
             case "6":
                 count_ranking(list_employees)
             case "7":
-                pass
+                print("Đã phân loại !")    
             case "8":
                 print("Đã thoát chương trình...")
                 break
